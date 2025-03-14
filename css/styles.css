@@ -1,0 +1,43 @@
+body {
+    font-family: Arial, sans-serif;
+  }
+  
+  header {
+    background-color: orange;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  nav a {
+    margin: 10px;
+    text-decoration: none;
+    color: white;
+  }
+  
+  .menu-item {
+    text-align: center;
+    margin: 20px;
+  }
+  
+  .menu-item img {
+    width: 200px;
+    border-radius: 10px;
+  }
+  
+  .login-form {
+    text-align: center;
+    margin-top: 30px;
+  }
+  
+  input {
+    padding: 10px;
+    margin: 10px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    background-color: orange;
+    border: none;
+    color: white;
+  }
+  
