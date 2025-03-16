@@ -14,10 +14,57 @@
     </header>
 
     <section id="cartItems"></section>
-    
+
+    <h2>Delivery Details</h2>
+    <input type="text" id="address" placeholder="Enter your address" required>
+
+    <h2>Payment Options</h2>
+    <select id="paymentMethod">
+        <option value="creditCard">Credit Card</option>
+        <option value="debitCard">Debit Card</option>
+        <option value="upi">UPI</option>
+        <option value="cashOnDelivery">Cash on Delivery</option>
+    </select>
+
     <button onclick="placeOrder()">Order Now</button>
 
-    <script src="js/script.js"></script>
+    <script>
+        function displayCart() {
+            const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+            const cartSection = document.getElementById('cartItems');
+            cartSection.innerHTML = '';
+
+            if (cartItems.length === 0) {
+                cartSection.innerHTML = '<p>Your cart is empty.</p>';
+                return;
+            }
+
+            cartItems.forEach(item => {
+                cartSection.innerHTML += `
+                    <div class="cart-item">
+                        <p>${item.itemName} - ₹${item.price}</p>
+                    </div>
+                `;
+            });
+        }
+
+        function placeOrder() {
+            const address = document.getElementById('address').value;
+            const paymentMethod = document.getElementById('paymentMethod').value;
+
+            if (!address) {
+                alert('Please enter your address.');
+                return;
+            }
+
+            alert(`Order placed successfully!\nAddress: ${address}\nPayment Method: ${paymentMethod}`);
+            localStorage.removeItem('cart');
+            displayCart();
+            window.location.href = 'index.html'; // Redirect to the home page
+        }
+
+        window.onload = displayCart;
+    </script>
 </body>
 
 </html>
