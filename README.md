@@ -26,6 +26,7 @@ To run this project locally:
    git clone https://github.com/keerthan721/FoodDelivery.git
 
 2.Navigate to the Project Directory:
+
     cd FoodDelivery
 
 3.Open index.html in Your Web Browser:
